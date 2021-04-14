@@ -35,6 +35,6 @@ public class EmpleadoDTO {
     private BigDecimal salarioActual;
 
     @JsonIgnore
-    private List<RegistroSalarioEmpleado> registrosSalariosEmpleados;
+    private List<RegistroSalarioEmpleadoDTO> registrosSalariosEmpleados;
 
 }

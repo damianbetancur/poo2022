@@ -5,15 +5,14 @@ import com.example.demo.dtos.RegistroSalarioEmpleadoDTO;
 import com.example.demo.dtos.request.IncrementoSalarioEmpleadoRequestDTO;
 import com.example.demo.dtos.response.IncrementoSalarioEmpleadoResponseDTO;
 import com.example.demo.enums.TipoExperiencia;
-import com.example.demo.repositories.RegistroSalarioEmpleadoRepository;
-import com.example.demo.services.NominaDeSueldoService;
+import com.example.demo.services.INominaDeSueldoService;
 import com.example.demo.services.crud.IEmpleadoService;
 import com.example.demo.services.crud.IRegistroSalarioEmpleadoService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 @Service
-public class NominaDeSueldoServiceImpl implements NominaDeSueldoService<IncrementoSalarioEmpleadoRequestDTO, IncrementoSalarioEmpleadoResponseDTO> {
+public class INominaDeSueldoServiceImpl implements INominaDeSueldoService<IncrementoSalarioEmpleadoRequestDTO, IncrementoSalarioEmpleadoResponseDTO> {
 
     private IEmpleadoService empleadoService;
     private IRegistroSalarioEmpleadoService registroSalarioEmpleadoService;
@@ -21,7 +20,7 @@ public class NominaDeSueldoServiceImpl implements NominaDeSueldoService<Incremen
     private final ModelMapper modelMapper;
 
 
-    public NominaDeSueldoServiceImpl(IEmpleadoService empleadoService, IRegistroSalarioEmpleadoService registroSalarioEmpleadoService, ModelMapper modelMapper) {
+    public INominaDeSueldoServiceImpl(IEmpleadoService empleadoService, IRegistroSalarioEmpleadoService registroSalarioEmpleadoService, ModelMapper modelMapper) {
         this.empleadoService = empleadoService;
         this.registroSalarioEmpleadoService = registroSalarioEmpleadoService;
         this.modelMapper = modelMapper;
