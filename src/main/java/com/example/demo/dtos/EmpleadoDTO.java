@@ -2,6 +2,7 @@ package com.example.demo.dtos;
 
 import com.example.demo.models.RegistroSalarioEmpleado;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.validation.annotation.Validated;
 
@@ -13,6 +14,8 @@ import java.util.List;
 @Validated
 @Data
 public class EmpleadoDTO {
+
+    @JsonIgnore
     private Integer id;
 
     @NotNull(message = "Nombre es requerido")

@@ -33,7 +33,7 @@ public class EmpleadoServiceImpl implements IEmpleadoService {
     @Transactional
     public EmpleadoDTO registrar(EmpleadoDTO empleadoDTO) {
         Empleado nuevoEmpleado = modelMapper.map(empleadoDTO, Empleado.class);
-        if (empleadoRepository.exists(Example.of(nuevoEmpleado))) {
+        if (empleadoRepository.findByDni(nuevoEmpleado.getDni())==null) {
             throw new DuplicateKeyException("Ya existe el Empleado con dni: " + nuevoEmpleado.getDni());
         }
         empleadoRepository.save(nuevoEmpleado);

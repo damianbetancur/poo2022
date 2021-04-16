@@ -15,12 +15,12 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class RegistroSalarioEmpleadoEmpleadoServiceImpl implements IRegistroSalarioEmpleadoService {
+public class RegistroSalarioEmpleadoServiceImpl implements IRegistroSalarioEmpleadoService {
 
     private RegistroSalarioEmpleadoRepository registroSalarioEmpleadoRepository;
     private final ModelMapper modelMapper;
 
-    public RegistroSalarioEmpleadoEmpleadoServiceImpl(RegistroSalarioEmpleadoRepository registroSalarioEmpleadoRepository, ModelMapper modelMapper) {
+    public RegistroSalarioEmpleadoServiceImpl(RegistroSalarioEmpleadoRepository registroSalarioEmpleadoRepository, ModelMapper modelMapper) {
         this.registroSalarioEmpleadoRepository = registroSalarioEmpleadoRepository;
         this.modelMapper = modelMapper;
     }

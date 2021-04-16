@@ -7,6 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class NominaDeSueldoControllerTest {
 
     @Test
-    void incrementarSalarioEmpleado() {
+    public void incrementarSalarioEmpleado() {
     }
 }

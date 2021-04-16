@@ -1,13 +1,17 @@
 package com.example.demo;
 
-import org.springframework.boot.SpringApplication;
+import com.example.demo.configs.SpringConfig;
+import com.example.demo.utils.ScopeUtils;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 
 @SpringBootApplication
 public class DemoQualityApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoQualityApplication.class, args);
+		ScopeUtils.calculateScopeSuffix();
+		new SpringApplicationBuilder(SpringConfig.class).registerShutdownHook(true)
+				.run(args);
 	}
 
 }

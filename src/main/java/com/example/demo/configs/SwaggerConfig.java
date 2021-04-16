@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.configs;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,8 +16,8 @@ import java.util.ArrayList;
 public class SwaggerConfig {
 
 	public static final Contact DEFAULT_CONTACT = new Contact("Damian Betancur ", "https://www.mercadolibre.com.ar",
-			"damian.com");
-	public static final ApiInfo DEFAULT_API_INFO = new ApiInfo("Mediapp Api Documentation", "Mediapp Api Documentation", "1.0",
+			"betancurdamian@gmail.com");
+	public static final ApiInfo DEFAULT_API_INFO = new ApiInfo("Quality API", "Quality Api Documentation", "1.0",
 			"PREMIUM", DEFAULT_CONTACT, "Apache 2.0", "http://www.apache.org/licenses/LICENSE-2.0",
 			new ArrayList<VendorExtension>());
 

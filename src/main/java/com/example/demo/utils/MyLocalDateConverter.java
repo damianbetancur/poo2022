@@ -1,4 +1,4 @@
-package com.example.demo.util;
+package com.example.demo.utils;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
