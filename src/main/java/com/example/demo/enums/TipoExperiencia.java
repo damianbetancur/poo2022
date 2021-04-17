@@ -2,7 +2,8 @@ package com.example.demo.enums;
 
 public enum TipoExperiencia {
     SIN_EXPERIENCIA("Sin Experiencia", 405),
-    CON_EXPERIENCIA("Con Experiencia", 101);
+    CON_EXPERIENCIA("Con Experiencia", 101),
+    CON_EXPERIENCIA5A("Con Experiencia", 101);
 
     private final String value;
     private final int code;

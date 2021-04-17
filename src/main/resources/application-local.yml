@@ -5,7 +5,7 @@ spring:
   jackson:
     date-format: yyyy-MM-dd
   datasource:
-    initialization-mode: always
+    #initialization-mode: always
     #data: classpath:/data.sql
     driver:
       class: com.mysql.cj.jdbc.Driver
@@ -21,7 +21,7 @@ spring:
     database: mysql
     show-sql: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: create-drop
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     database-platform: org.hibernate.dialect.MySQL8Dialect

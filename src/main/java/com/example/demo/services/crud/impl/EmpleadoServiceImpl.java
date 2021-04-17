@@ -31,7 +31,7 @@ public class EmpleadoServiceImpl implements IEmpleadoService {
 
     @Override
     @Transactional
-    public EmpleadoDTO registrar(EmpleadoDTO empleadoDTO) {
+    public EmpleadoDTO registrar(EmpleadoDTO empleadoDTO)  {
         Empleado nuevoEmpleado = modelMapper.map(empleadoDTO, Empleado.class);
         if (empleadoRepository.findByDni(nuevoEmpleado.getDni())==null) {
             throw new DuplicateKeyException("Ya existe el Empleado con dni: " + nuevoEmpleado.getDni());

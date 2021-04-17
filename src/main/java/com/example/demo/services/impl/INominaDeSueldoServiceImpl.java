@@ -48,11 +48,12 @@ public class INominaDeSueldoServiceImpl implements INominaDeSueldoService<Increm
                 registroSalarioEmpleadoService.registrar(registroSalarioEmpleadoDTO);
 
                 incrementoSalarioEmpleadoResponseDTO.setUnTipoExperiencia(TipoExperiencia.CON_EXPERIENCIA);
+
             } else {
                 incrementoSalarioEmpleadoResponseDTO.setUnTipoExperiencia(TipoExperiencia.SIN_EXPERIENCIA);
             }
 
-            incrementoSalarioEmpleadoResponseDTO.setUnEmpleado(modelMapper.map(empleado, EmpleadoDTO.class));
+            incrementoSalarioEmpleadoResponseDTO.setUnEmpleado(empleado);
         }
         return incrementoSalarioEmpleadoResponseDTO;
     }

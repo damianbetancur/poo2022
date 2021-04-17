@@ -44,7 +44,7 @@ public class Empleado {
     @NotNull(message = "La antiguedad no puede ser Nulo")
     private Integer antiguedad;
 
-    @Column(nullable = false)
+    @Column(name = "salario_actual", nullable = false)
     @NotNull(message = "El sueldo no puede ser Nulo")
     private BigDecimal salarioActual;
 
