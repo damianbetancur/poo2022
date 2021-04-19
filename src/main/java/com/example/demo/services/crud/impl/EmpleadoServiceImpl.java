@@ -33,9 +33,6 @@ public class EmpleadoServiceImpl implements IEmpleadoService {
     @Transactional
     public EmpleadoDTO registrar(EmpleadoDTO empleadoDTO)  {
         Empleado nuevoEmpleado = modelMapper.map(empleadoDTO, Empleado.class);
-        if (empleadoRepository.findByDni(nuevoEmpleado.getDni())==null) {
-            throw new DuplicateKeyException("Ya existe el Empleado con dni: " + nuevoEmpleado.getDni());
-        }
         empleadoRepository.save(nuevoEmpleado);
         empleadoDTO.setId(nuevoEmpleado.getId());
         return empleadoDTO;
@@ -79,11 +76,7 @@ public class EmpleadoServiceImpl implements IEmpleadoService {
 
     @Override
     public EmpleadoDTO buscarEmpleadoPorDNI(String dni) {
-        Optional<Empleado> opt = Optional.ofNullable(empleadoRepository.findByDni(dni));
-
-        if (!opt.isPresent()) {
-            throw new NoSuchElementException("No existe empleado con el dni: " + dni);
-        }
-        return modelMapper.map(opt.get(), EmpleadoDTO.class);
+        Empleado empleado = empleadoRepository.findByDni(dni);
+        return modelMapper.map(empleado, EmpleadoDTO.class);
     }
 }

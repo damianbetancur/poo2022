@@ -14,12 +14,18 @@
 	<name>quality</name>
 	<description>Demo project for Spring Boot con Quality</description>
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>11</java.version>
 	</properties>
 	<dependencies>
 
 		<!-- ___________________________________________________ -->
 		<!-- __ Spring boot dependecias iniciales del proyecto__ -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
@@ -67,6 +73,7 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 		</dependency>
+
 		-->
 
 
@@ -202,13 +209,13 @@
 
 		<!-- ___________________________________________________ -->
 		<!-- ___________________ Seguridad _____________________ -->
+		<!--
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt</artifactId>
 			<version>0.9.1</version>
 		</dependency>
-
-
+		-->
 
 
 	</dependencies>

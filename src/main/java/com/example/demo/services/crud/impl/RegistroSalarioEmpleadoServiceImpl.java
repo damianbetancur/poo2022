@@ -29,10 +29,15 @@ public class RegistroSalarioEmpleadoServiceImpl implements IRegistroSalarioEmple
     @Override
     @Transactional
     public RegistroSalarioEmpleadoDTO registrar(RegistroSalarioEmpleadoDTO registroSalarioEmpleadoDTO) {
+
         if (registroSalarioEmpleadoDTO.getUnEmpleado()==null){
             throw new IllegalArgumentException("Registrar no permitido, debe de poseer un empleado");
         }
-        registroSalarioEmpleadoDTO.setId(registroSalarioEmpleadoRepository.save(modelMapper.map(registroSalarioEmpleadoDTO,RegistroSalarioEmpleado.class)).getId());
+
+        RegistroSalarioEmpleado nuevoRegistroEmpleado = modelMapper.map(registroSalarioEmpleadoDTO,RegistroSalarioEmpleado.class);
+
+        registroSalarioEmpleadoDTO.setId(registroSalarioEmpleadoRepository.save(nuevoRegistroEmpleado).getId());
+
         return registroSalarioEmpleadoDTO;
     }
 
@@ -58,10 +63,6 @@ public class RegistroSalarioEmpleadoServiceImpl implements IRegistroSalarioEmple
     @Override
     public RegistroSalarioEmpleadoDTO listarId(Integer id) {
         Optional<RegistroSalarioEmpleado> opt = registroSalarioEmpleadoRepository.findById(id);
-
-        if (!opt.isPresent()) {
-            throw new NoSuchElementException("No existe el registro de salario del empleado con el id: " + id);
-        }
         return modelMapper.map(opt.get(), RegistroSalarioEmpleadoDTO.class);
     }
 

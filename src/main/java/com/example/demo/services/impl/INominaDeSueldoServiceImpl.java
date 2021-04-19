@@ -11,6 +11,8 @@ import com.example.demo.services.crud.IRegistroSalarioEmpleadoService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.NoSuchElementException;
+
 @Service
 public class INominaDeSueldoServiceImpl implements INominaDeSueldoService<IncrementoSalarioEmpleadoRequestDTO, IncrementoSalarioEmpleadoResponseDTO> {
 
@@ -34,7 +36,7 @@ public class INominaDeSueldoServiceImpl implements INominaDeSueldoService<Increm
 
         IncrementoSalarioEmpleadoResponseDTO incrementoSalarioEmpleadoResponseDTO = new IncrementoSalarioEmpleadoResponseDTO();
 
-        if (empleado!=null) {
+        if (empleado!=null ) {
             //  solo los empleados con más de 5 años de experiencia pueden obtener un aumento
             if (empleado.getAntiguedad() > 5) {
                 empleado.setSalarioActual(empleado.getSalarioActual().add(incrementoSalarioEmpleadoRequestDTO.getMonto()));
@@ -49,8 +51,6 @@ public class INominaDeSueldoServiceImpl implements INominaDeSueldoService<Increm
 
                 incrementoSalarioEmpleadoResponseDTO.setUnTipoExperiencia(TipoExperiencia.CON_EXPERIENCIA);
 
-            } else {
-                incrementoSalarioEmpleadoResponseDTO.setUnTipoExperiencia(TipoExperiencia.SIN_EXPERIENCIA);
             }
 
             incrementoSalarioEmpleadoResponseDTO.setUnEmpleado(empleado);

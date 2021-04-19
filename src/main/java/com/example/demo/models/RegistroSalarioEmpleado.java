@@ -7,6 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Getter
@@ -30,8 +31,7 @@ public class RegistroSalarioEmpleado {
 
     @Column(name = "monto")
     @NotNull(message = "El monto no puede ser 0")
-    @Size(min = 2, message = "El nombre debe tener al menos dos caracteres")
-    private float monto;
+    private BigDecimal monto;
 
     @ManyToOne
     @JoinColumn(name = "id_empleado_fk", nullable = false)

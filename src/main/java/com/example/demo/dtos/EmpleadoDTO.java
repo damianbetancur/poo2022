@@ -27,11 +27,10 @@ public class EmpleadoDTO {
     private String apellido;
 
     @NotNull(message = "El DNI es requerido")
-    @Size(min = 8, message = "DNI debe de poseer 8 caracteres")
+    @Size(min = 7, message = "DNI debe de poseer 8 caracteres")
     private String dni;
 
     @NotNull(message = "La antiguedad es requerido")
-    @Size(min = 1, max = 2, message = "DNI debe de poseer minimo 1 caracter y maximo 2 caracteres")
     private Integer antiguedad;
 
     @NotNull(message = "El salario actual es requerido")
