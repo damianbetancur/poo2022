@@ -41,6 +41,7 @@ public class INominaDeSueldoServiceImpl implements INominaDeSueldoService<Increm
             if (empleado.getAntiguedad() > 5) {
                 empleado.setSalarioActual(empleado.getSalarioActual().add(incrementoSalarioEmpleadoRequestDTO.getMonto()));
 
+
                 registroSalarioEmpleadoDTO.setUnEmpleado(this.empleadoService.registrar(empleado));
 
                 registroSalarioEmpleadoDTO.setFecha(incrementoSalarioEmpleadoRequestDTO.getFecha());

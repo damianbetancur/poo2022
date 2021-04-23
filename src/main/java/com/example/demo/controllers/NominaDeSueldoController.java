@@ -28,7 +28,7 @@ public class NominaDeSueldoController {
     }
 
     @PostMapping(produces = "application/json", consumes = "application/json")
-    public ResponseEntity<IncrementoSalarioEmpleadoResponseDTO> incrementarSalarioEmpleado(@Valid @RequestBody IncrementoSalarioEmpleadoRequestDTO incrementoSalarioEmpleadoRequestDTO)  {
+    public ResponseEntity<IncrementoSalarioEmpleadoResponseDTO> incrementarSalarioEmpleado(@Validated @RequestBody IncrementoSalarioEmpleadoRequestDTO incrementoSalarioEmpleadoRequestDTO)  {
 
         IncrementoSalarioEmpleadoResponseDTO nuevoIncrementoDeSalarioEmpleado = (IncrementoSalarioEmpleadoResponseDTO) INominaDeSueldoService.incrementarSalario(incrementoSalarioEmpleadoRequestDTO);
 

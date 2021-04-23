@@ -1,6 +1,5 @@
-package com.example.demo.util;
+package com.example.demo.utils;
 
-import com.example.demo.utils.ScopeUtils;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import org.junit.jupiter.api.Test;

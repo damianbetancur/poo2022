@@ -17,7 +17,7 @@ public class IncrementoSalarioEmpleadoRequestDTO {
     private LocalDate fecha;
 
     @NotBlank(message="El DNI no puede estar vacío")
-    @Pattern(regexp="^[0-9]{8}$",message="El DNI debe poseer 8 caracteres numericos")
+    @Pattern(regexp="^[0-9]{4}$",message="El DNI debe poseer 8 caracteres numericos")
     private String dni;
 
 

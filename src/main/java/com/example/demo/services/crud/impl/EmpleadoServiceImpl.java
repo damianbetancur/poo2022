@@ -22,7 +22,7 @@ public class EmpleadoServiceImpl implements IEmpleadoService {
 
     private EmpleadoRepository  empleadoRepository;
 
-    private final ModelMapper modelMapper;
+    private ModelMapper modelMapper;
 
     public EmpleadoServiceImpl(EmpleadoRepository empleadoRepository, ModelMapper modelMapper) {
         this.empleadoRepository = empleadoRepository;
