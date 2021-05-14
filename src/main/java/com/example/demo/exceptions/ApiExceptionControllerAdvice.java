@@ -8,7 +8,6 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.List;
@@ -22,12 +21,12 @@ public class ApiExceptionControllerAdvice {
     @ExceptionHandler
     @ResponseBody
     @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
-    public ErrorMessage handleException(Exception ex) {
+    public ApiError handleException(Exception ex) {
 
         StringWriter sw = new StringWriter();
         ex.printStackTrace(new PrintWriter(sw));
 
-        return new ErrorMessage(
+        return new ApiError(
                 HttpStatus.INTERNAL_SERVER_ERROR.value(),
                 ex.getClass().getName(),
                 ex.getMessage());
@@ -43,9 +42,9 @@ public class ApiExceptionControllerAdvice {
             org.springframework.web.server.ServerWebInputException.class
     })
     @ResponseBody
-    public ErrorMessage badRequest(Exception ex) {
+    public ApiError badRequest(Exception ex) {
         logger.info("executing exception handler (REST)");
-        return new ErrorMessage(
+        return new ApiError(
                 HttpStatus.BAD_REQUEST.value(),
                 ex.getClass().getName(),
                 ex.getMessage());
@@ -78,8 +77,8 @@ public class ApiExceptionControllerAdvice {
             NotFoundException.class
     })
     @ResponseBody
-    public ErrorMessage notFoundRequest(Exception ex) {
-        return new ErrorMessage(
+    public ApiError notFoundRequest(Exception ex) {
+        return new ApiError(
                 HttpStatus.NOT_FOUND.value(),
                 ex.getClass().getName(),
                 ex.getMessage());

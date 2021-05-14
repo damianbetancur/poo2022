@@ -1,6 +1,6 @@
 package com.example.demo.services.crud;
 
-import com.example.demo.dtos.EmpleadoDTO;
+import com.example.demo.dto.EmpleadoDTO;
 
 public interface IEmpleadoService extends ICRUD<EmpleadoDTO>{
 

@@ -1,8 +1,6 @@
 package com.example.demo.controllers;
 
-import com.example.demo.dtos.EmpleadoDTO;
-import com.example.demo.dtos.request.IncrementoSalarioEmpleadoRequestDTO;
-import com.example.demo.dtos.response.IncrementoSalarioEmpleadoResponseDTO;
+import com.example.demo.dto.EmpleadoDTO;
 import com.example.demo.services.crud.IEmpleadoService;
 import org.apache.logging.log4j.LogManager;
 import org.springframework.http.HttpHeaders;
@@ -11,9 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import javax.validation.Valid;
 import java.net.URI;
-import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping(EmpleadoController.RESOURCE)

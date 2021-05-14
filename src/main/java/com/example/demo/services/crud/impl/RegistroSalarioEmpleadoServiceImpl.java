@@ -1,6 +1,6 @@
 package com.example.demo.services.crud.impl;
 
-import com.example.demo.dtos.RegistroSalarioEmpleadoDTO;
+import com.example.demo.dto.RegistroSalarioEmpleadoDTO;
 import com.example.demo.models.Empleado;
 import com.example.demo.models.RegistroSalarioEmpleado;
 import com.example.demo.repositories.RegistroSalarioEmpleadoRepository;

@@ -1,8 +1,8 @@
 package com.example.demo.controllers;
 
 
-import com.example.demo.dtos.request.IncrementoSalarioEmpleadoRequestDTO;
-import com.example.demo.dtos.response.IncrementoSalarioEmpleadoResponseDTO;
+import com.example.demo.dto.request.IncrementoSalarioEmpleadoRequestDTO;
+import com.example.demo.dto.response.IncrementoSalarioEmpleadoResponseDTO;
 import com.example.demo.services.INominaDeSueldoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
-import javax.validation.Valid;
 
 
 @RestController

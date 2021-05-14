@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import com.example.demo.configs.SpringConfig;
+import com.example.demo.config.SpringConfig;
 import com.example.demo.utils.ScopeUtils;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;

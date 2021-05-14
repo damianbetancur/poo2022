@@ -1,17 +1,15 @@
 package com.example.demo.services.impl;
 
-import com.example.demo.dtos.EmpleadoDTO;
-import com.example.demo.dtos.RegistroSalarioEmpleadoDTO;
-import com.example.demo.dtos.request.IncrementoSalarioEmpleadoRequestDTO;
-import com.example.demo.dtos.response.IncrementoSalarioEmpleadoResponseDTO;
+import com.example.demo.dto.EmpleadoDTO;
+import com.example.demo.dto.RegistroSalarioEmpleadoDTO;
+import com.example.demo.dto.request.IncrementoSalarioEmpleadoRequestDTO;
+import com.example.demo.dto.response.IncrementoSalarioEmpleadoResponseDTO;
 import com.example.demo.enums.TipoExperiencia;
 import com.example.demo.services.INominaDeSueldoService;
 import com.example.demo.services.crud.IEmpleadoService;
 import com.example.demo.services.crud.IRegistroSalarioEmpleadoService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-
-import java.util.NoSuchElementException;
 
 @Service
 public class INominaDeSueldoServiceImpl implements INominaDeSueldoService<IncrementoSalarioEmpleadoRequestDTO, IncrementoSalarioEmpleadoResponseDTO> {

@@ -4,8 +4,8 @@ spring:
   datasource:
     url: jdbc:mysql://${DB_MYSQL_DESAENV03_DELUXEMACA_DELUXEMACA_ENDPOINT}/deluxeMaca?useSSL=true&serverTimezone=UTC&characterEncoding=UTF-8
     username: deluxeMaca_WPROD
-    password: ${DB_MYSQL_DESAENV03_DELUXEMACA_DELUXEMACA_WPROD}
+    password: ${DB_MYSQL_DESAENV04_DELUXEMACA_DELUXEMACA_WPROD}
   jpa:
-    show-sql: false
+    show-sql: true
     hibernate:
       ddl-auto: none

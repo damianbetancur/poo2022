@@ -1,6 +1,6 @@
 package com.example.demo.services.crud.impl;
 
-import com.example.demo.dtos.EmpleadoDTO;
+import com.example.demo.dto.EmpleadoDTO;
 import com.example.demo.models.Empleado;
 import com.example.demo.repositories.EmpleadoRepository;
 import com.example.demo.services.crud.IEmpleadoService;
@@ -12,8 +12,6 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import javax.transaction.Transactional;
 
-import org.springframework.dao.DuplicateKeyException;
-import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 
@@ -32,6 +30,7 @@ public class EmpleadoServiceImpl implements IEmpleadoService {
     @Override
     @Transactional
     public EmpleadoDTO registrar(EmpleadoDTO empleadoDTO)  {
+
         Empleado nuevoEmpleado = modelMapper.map(empleadoDTO, Empleado.class);
         empleadoRepository.save(nuevoEmpleado);
         empleadoDTO.setId(nuevoEmpleado.getId());
@@ -47,6 +46,7 @@ public class EmpleadoServiceImpl implements IEmpleadoService {
     }
 
     @Override
+    @Transactional
     public void eliminar(Integer id) {
         Optional<Empleado> opt = empleadoRepository.findById(id);
         if (!opt.isPresent()) {

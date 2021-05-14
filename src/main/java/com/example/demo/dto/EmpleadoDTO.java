@@ -1,8 +1,6 @@
-package com.example.demo.dtos;
+package com.example.demo.dto;
 
-import com.example.demo.models.RegistroSalarioEmpleado;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.validation.annotation.Validated;
 

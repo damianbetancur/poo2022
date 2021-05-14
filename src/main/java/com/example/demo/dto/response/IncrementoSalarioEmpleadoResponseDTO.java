@@ -1,6 +1,6 @@
-package com.example.demo.dtos.response;
+package com.example.demo.dto.response;
 
-import com.example.demo.dtos.EmpleadoDTO;
+import com.example.demo.dto.EmpleadoDTO;
 import com.example.demo.enums.TipoExperiencia;
 import lombok.Data;
 import org.springframework.validation.annotation.Validated;
